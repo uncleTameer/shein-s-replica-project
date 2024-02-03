@@ -1,0 +1,12 @@
+<div class="tops-container">
+  <div *ngFor="let item of bagItems" class="top-item">
+    <img [src]="item.imageUrl" alt="Item image" />
+    <p>Price: ${{ item.price }}</p>
+    <p>
+      Size: <span *ngFor="let size of item.size">{{ size }}</span>
+    </p>
+    <p [ngClass]="{ 'in-stock': item.inStock, 'out-of-stock': !item.inStock }">
+      {{ item.inStock ? "In Stock" : "Out of Stock" }}
+    </p>
+  </div>
+</div>

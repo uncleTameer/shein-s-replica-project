@@ -1,0 +1,16 @@
+.navigation_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: aqua;
+  width: 100%;
+}
+#list {
+  display: flex;
+  width: 100%; /* Make sure the list takes up the full width */
+  justify-content: space-evenly; /* This will space the items evenly */
+  align-items: center; /* Optional: removes bullet points from list */
+  padding: 0;
+}
