@@ -1,0 +1,32 @@
+<div>
+    <h2>Admin Panel</h2>
+
+    <div>
+      <h3>Add New Item</h3>
+      <form (submit)="addItem()">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" [(ngModel)]="newItemName" required>
+
+        <label for="itemPrice">Item Price:</label>
+        <input type="number" id="itemPrice" [(ngModel)]="newItemPrice" required>
+
+        <label for="itemImage">Item Image URL:</label>
+        <input type="text" id="itemImage" [(ngModel)]="newItemImage" required>
+
+        <label for="itemSizes">Available Sizes:</label>
+        <input type="text" id="itemSizes" [(ngModel)]="newItemSizes" required>
+
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+
+    <div *ngIf="items.length > 0">
+      <h3>Current Items</h3>
+      <ul>
+        <li *ngFor="let item of items">
+          <img [src]="item.imageUrl" alt="{{ item.id }}" height="50">
+          <span>{{ item.name }} - {{ item.price | currency:'ILS' }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
